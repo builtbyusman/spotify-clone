@@ -5,7 +5,7 @@ A basic Spotify clone using HTML, CSS, JS
 
 ## Demo
 
-[Live Demo](https://builtbyusman.github.io/spotify-clone)
+[Live Demo](https://builtbyusmanspotify-clone)
 
 ---
 ## Screenshots
