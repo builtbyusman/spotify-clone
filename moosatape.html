@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secstyle.css">
+    <title>Spotify - web player: Music for everyone</title>
+    <link rel="icon" sizes="16x16" type="image/png"
+        href="https://open.spotifycdn.com/cdn/images/favicon16.1c487bff.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="m-header">
+                <div class="m-h-m">
+                    <div class="h-logo">
+                        <a href="/" class="h-logo-ancher">
+                            <svg role="img" viewBox="0 0 24 24" class="e-9890-logo e-9890-baseline" aria-label="Spotify"
+                                aria-hidden="false" height="32" data-encore-id="logoSpotify" fill="#fff"
+                                style="height: 32px;">
+                                <title>Spotify</title>
+                                <path
+                                    d="M13.427.01C6.805-.253 1.224 4.902.961 11.524.698 18.147 5.853 23.728 12.476 23.99c6.622.263 12.203-4.892 12.466-11.514S20.049.272 13.427.01m5.066 17.579a.717.717 0 0 1-.977.268 14.4 14.4 0 0 0-5.138-1.747 14.4 14.4 0 0 0-5.42.263.717.717 0 0 1-.338-1.392c1.95-.474 3.955-.571 5.958-.29 2.003.282 3.903.928 5.647 1.92a.717.717 0 0 1 .268.978m1.577-3.15a.93.93 0 0 1-1.262.376 17.7 17.7 0 0 0-5.972-1.96 17.7 17.7 0 0 0-6.281.238.93.93 0 0 1-1.11-.71.93.93 0 0 1 .71-1.11 19.5 19.5 0 0 1 6.94-.262 19.5 19.5 0 0 1 6.599 2.165c.452.245.62.81.376 1.263m1.748-3.551a1.147 1.147 0 0 1-1.546.488 21.4 21.4 0 0 0-6.918-2.208 21.4 21.4 0 0 0-7.259.215 1.146 1.146 0 0 1-.456-2.246 23.7 23.7 0 0 1 8.034-.24 23.7 23.7 0 0 1 7.657 2.445c.561.292.78.984.488 1.546m13.612-.036-.832-.247c-1.67-.495-2.14-.681-2.14-1.353 0-.637.708-1.327 2.264-1.327 1.539 0 2.839.752 3.51 1.31.116.096.24.052.24-.098V6.935c0-.097-.027-.15-.098-.203-.83-.62-2.272-1.07-3.723-1.07-2.953 0-4.722 1.68-4.722 3.59 0 2.157 1.371 2.91 3.626 3.546l.973.274c1.689.478 1.998.902 1.998 1.556 0 1.097-.831 1.433-2.07 1.433-1.556 0-3.457-.911-4.35-2.025-.08-.098-.177-.053-.177.062v2.423c0 .097.01.141.08.22.743.814 2.52 1.53 4.59 1.53 2.546 0 4.456-1.485 4.456-3.784 0-1.787-1.052-2.865-3.625-3.635m10.107-1.76c-1.68 0-2.653 1.026-3.219 2.052V9.376c0-.08-.044-.124-.124-.124h-2.22c-.079 0-.123.044-.123.124V20.72c0 .08.044.124.124.124h2.22c.079 0 .123-.044.123-.124v-4.536c.566 1.025 1.521 2.034 3.237 2.034 2.264 0 3.89-1.955 3.89-4.581s-1.644-4.545-3.908-4.545m-.654 6.986c-1.185 0-2.211-1.167-2.618-2.458.407-1.362 1.344-2.405 2.618-2.405 1.211 0 2.051.92 2.051 2.423s-.84 2.44-2.051 2.44m40.633-6.826h-2.264c-.08 0-.115.017-.15.097l-2.282 5.483-2.29-5.483c-.035-.08-.07-.097-.15-.097h-3.661v-.584c0-.955.645-1.397 1.476-1.397.496 0 1.035.256 1.415.486.089.053.15-.008.115-.088l-.796-1.901a.26.26 0 0 0-.124-.133c-.389-.203-1.025-.38-1.644-.38-1.875 0-2.954 1.432-2.954 3.254v.743h-1.503c-.08 0-.124.044-.124.124v1.768c0 .08.044.124.124.124h1.503v6.668c0 .08.044.123.124.123h2.264c.08 0 .124-.044.124-.123v-6.668h1.936l2.812 6.11-1.512 3.325c-.044.098.009.142.097.142h2.414c.08 0 .116-.018.15-.097l4.997-11.355c.035-.08-.009-.141-.097-.141M54.964 9.04c-2.865 0-4.837 2.025-4.837 4.616 0 2.573 1.971 4.616 4.837 4.616 2.856 0 4.846-2.043 4.846-4.616 0-2.591-1.99-4.616-4.846-4.616m.008 7.065c-1.37 0-2.343-1.043-2.343-2.45 0-1.405.973-2.449 2.343-2.449 1.362 0 2.335 1.043 2.335 2.45 0 1.406-.973 2.45-2.335 2.45m33.541-6.334a1.24 1.24 0 0 0-.483-.471 1.4 1.4 0 0 0-.693-.17q-.384 0-.693.17a1.24 1.24 0 0 0-.484.471q-.174.302-.174.681 0 .375.174.677.175.3.484.471t.693.17.693-.17.483-.471.175-.676q0-.38-.175-.682m-.211 1.247a1 1 0 0 1-.394.39 1.15 1.15 0 0 1-.571.14 1.16 1.16 0 0 1-.576-.14 1 1 0 0 1-.391-.39 1.14 1.14 0 0 1-.14-.566q0-.316.14-.562t.391-.388.576-.14q.32 0 .57.14.253.141.395.39t.142.565q0 .312-.142.56m-19.835-5.78c-.85 0-1.468.6-1.468 1.396s.619 1.397 1.468 1.397c.866 0 1.485-.6 1.485-1.397 0-.796-.619-1.397-1.485-1.397m19.329 5.19a.31.31 0 0 0 .134-.262q0-.168-.132-.266-.132-.099-.381-.099h-.588v1.229h.284v-.489h.154l.374.489h.35l-.41-.518a.5.5 0 0 0 .215-.084m-.424-.109h-.26v-.3h.27q.12 0 .184.036a.12.12 0 0 1 .065.116.12.12 0 0 1-.067.111.4.4 0 0 1-.192.037M69.607 9.252h-2.263c-.08 0-.124.044-.124.124v8.56c0 .08.044.123.124.123h2.263c.08 0 .124-.044.124-.123v-8.56c0-.08-.044-.124-.124-.124m-3.333 6.605a2.1 2.1 0 0 1-1.053.257c-.725 0-1.185-.425-1.185-1.362v-3.484h2.211c.08 0 .124-.044.124-.124V9.376c0-.08-.044-.124-.124-.124h-2.21V6.944c0-.097-.063-.15-.15-.08l-3.954 3.113c-.053.044-.07.088-.07.16v1.007c0 .08.044.124.123.124h1.539v3.855c0 2.087 1.203 3.06 2.918 3.06.743 0 1.46-.194 1.884-.442.062-.035.07-.07.07-.133v-1.68c0-.088-.044-.115-.123-.07"
+                                    transform="translate(-0.95,0)"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="m-h-search">
+                        <button class="h-s-btn">
+                            <img src="svg/icons8-home.svg" alt="">
+                            <span>Home</span>
+                        </button>
+                        <div class="h-s-box">
+                            <div class="s-box-df">
+                                <form action="" class="search-box">
+                                    <div class="form-glass">
+                                        <img src="svg/icons8-search.svg" alt="">
+                                        <div class="glass">search</div>
+                                    </div>
+                                    <div class="form-input">
+                                        <input type="search" name="" id="" placeholder="What do you want to play?">
+                                        <div class="input-h">
+                                            <span>Ctrl</span>
+                                            <span>K</span>
+                                        </div>
+                                    </div>
+                                    <div class="line">
+                                        <svg width="1" height="23px" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="1" y1="0" x2="1" y2="100" stroke="#b3b3b3" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="input-icon">
+                                        <img src="svg/unarchive_24dp_E3E3E3.svg" alt="">
+                                        <div class="icon-text">browse</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-h-m2">
+                    <button class="m2-btn">premium</button>
+                    <button class="m2-btn">support</button>
+                    <button class="m2-btn">download</button>
+                    <div class="m1-box">
+                        <svg width="5" height="30px" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1" y1="0" x2="1" y2="100" stroke="#b3b3b3" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <a class="m2-box">
+                        <i class="fa-solid fa-circle-down"></i>
+                        <p>install app</p>
+                    </a>
+                    <div class="login-box">
+                        <button>sign up</button>
+                        <button class="scl">Log in</button>
+                    </div>
+                </div>
+            </div>
+            <div class="m-l-asider same">
+                <div class="l-s-f">
+                    <header>
+                        <div class="your">
+                            <h1>your library</h1>
+                        </div>
+                        <div class="plus">
+                            <span>
+                                <svg data-encore-id="icon" role="img" aria-hidden="true"
+                                    class="e-9890-icon e-9890-baseline" viewBox="0 0 16 16"
+                                    style="--encore-icon-height: var(--encore-graphic-size-decorative-smaller); --encore-icon-width: var(--encore-graphic-size-decorative-smaller);">
+                                    <path
+                                        d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </header>
+                </div>
+                <div class="l-s-s">
+                    <section class="asider-first">
+                        <div class="first">
+                            <div class="first">
+                                <h4>create your first Playlist</h4>
+                                <p>It's easy,we'll help you</p>
+                            </div>
+                            <div class="second">
+                                <button>Create playlist</button>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="first">
+                                <h4>Let's find some podcasts to follow</h4>
+                                <p>we'll keep you updated on new episode</p>
+                            </div>
+                            <div class="second">
+                                <button>Browse podcasts</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="asider-second">
+                        <div class="first">
+                            <span>legal</span>
+                            <span>safety&PrivacyCenter</span><span>privacyPolicy</span><span>cookies</span><span>aboutds</span><span>accessibillity</span>
+                        </div>
+                        <div class="sec">
+                            <p><a href="">cookies</a></p>
+                        </div>
+                        <div class="thr">
+                            <button><i class="fa-solid fa-globe"></i>english</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="m-r-asider same" id="pad">
+                <main>
+                    <section class="fir-song-h" id="newsup">
+                        <div class="s-img s-hh-same">
+                            <div>
+                                <img src="https://i.scdn.co/image/ab67616d00001e021d1cc2e40d533d7bcebf5dae" alt=""
+                                    srcset="">
+                            </div>
+                        </div>
+                        <div class="s-name s-hh-same">
+                            <div class="first">
+                                <p>album</p>
+                            </div>
+                            <div class="sec">
+                                <h1>moosatape</h1>
+                            </div>
+                            <div class="thr">
+                                <span>
+                                    <img src="https://i.scdn.co/image/ab6761610000f1789973157bdaedef3f77ef8e13" alt="">
+                                </span>
+                                <span>
+                                    <a href="">sifhu moosa wala</a>
+                                    <p>•2021•32 songs,1hr37 min</p>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="so-inf">
+                        <div class="first">
+                            <div class="first">
+                                <button>
+                                    <span>
+                                        <p>play</p>
+                                    </span>
+                                    <i class="fa-solid fa-circle-play play" id="mossaBtn"
+                                        onclick="playToggle('moosaBtn', 'moosaIntro')"></i>
+                                    <audio id="moosaIntro" style="display: none;"
+                                        src="audio/Moosetape Intro - Sidhu Moose Wala [0iscaY9_ecU].mp3">
+                                    </audio>
+                                </button>
+                                <span>
+                                    <span>
+                                        <p>save to your playlist</p>
+                                    </span>
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                </span>
+                                <span>
+                                    <span class="lolo">
+                                        <p>more option for afsos</p>
+                                    </span>
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </span>
+                            </div>
+                            <div class="sec">
+                                <span>
+                                    <a href="">list <i class="fa-solid fa-list"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                        <section class="ll-hr">
+                            <div class="first">
+                                <div>
+                                    <p>#</p>
+                                    <p>title</p>
+                                </div>
+                                <div>
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="sec"></div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>1</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('moosaBtn', 'moosaIntro')"></i>
+                                    </span>
+                                    <div>
+                                        <a href="">moosatape(intro)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>1:32</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>2</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','iamBack')"></i>
+                                        <audio id="iamBack"
+                                            src="audio/Bitch I'm Back (Official Audio) - Sidhu Moose Wala _ Moosetape [W5NgXKe4SJk].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">bitch i'm back</a>
+                                        <P id="bck" style="display: none;">E</P>
+                                        <a href="">sidhu moosa wala</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:50</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>3</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','burberry')"></i>
+                                        <audio id="burberry"
+                                            src="audio/Burberry (Official Video) Sidhu Moose Wala _ Moosetape _ The Kidd _ Teji Sandhu [I1Llz8075MA].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">burberry</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:23</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>4</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','rack')"></i>
+                                        <audio id="rack"
+                                            src="audio/Racks And Rounds(Official Audio) Sidhu Moose Wala _ Sikander Kahlon _ The Kidd _ Moosetape [b8hwZidIOEA].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">racks and rounds(feat.sikanher kahlon)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala,sikanher kahlon</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:45</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>5</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','us')"></i>
+                                        <audio id="us"
+                                            src="audio/US (Official Video) Sidhu Moose Wala _ Raja Kumari _ The Kidd _ Sukh Sanghera _ Moosetape [c8UUWkUJu6E].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">us(feat.raja Kumari)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala,raja Kumari</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:50</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>6</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','mosad')"></i>
+                                        <audio id="mosad"
+                                            src="audio/MOOSEDRILLA (Official Audio) SIDHU MOOSE WALA _ DIVINE _ THE KIDD _ MOOSETAPE [GFUJ5mG_4NI].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">moosadrilla(feat.DIVINE)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala,divine</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:52</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>7</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','boo')"></i>
+                                        <audio id="boo"
+                                            src="audio/Boo Call (Skit) Sidhu Moose Wala _ Sonam Bajwa _ Moosetape [c01R-h5wRcU].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">boo Call(skit)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>0:43</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="orp">
+                            <div class="">
+                                <div class="fit">
+                                    <span>
+                                        <p>8</p>
+                                        <i class="fa-solid fa-play" onclick="playToggle('this','brS')"></i>
+                                        <audio id="brS"
+                                            src="audio/Brown Shortie (Official Video) Sidhu Moose Wala _ Sonam Bajwa _ The Kidd _ Sukh Sanghera _ Moosetape [AKg-PRzEuqo].mp3"
+                                            style="display: none;"></audio>
+                                    </span>
+                                    <div>
+                                        <a href="">brown Shortie(feat.sonam bajwa)</a>
+                                        <p style="display: none;"></p>
+                                        <a href="">sidhu moosa wala,sonam bajwa</a>
+                                    </div>
+                                </div>
+                                <div class="sec">
+                                    <div>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </span>
+                                        <span>
+                                            <p>3:28</p>
+                                        </span>
+                                        <span class="huhu">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="love">
+                            <div>
+                                <div>
+                                    <p>May 15, 2021</p>
+                                    <p>© 2021 Sidhu Moose Wala</p>
+                                    <p>℗ 2021 Sidhu Moose Wala</p>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <header class="main-hh">
+                        <div>
+                            <span>
+                                <h2><a href="/">more by sidhu moosa wala</a></h2>
+                            </span>
+                            <div><a href="">See diccography</a></div>
+                        </div>
+                    </header>
+                    <section class="more">
+                        <div class="fr">
+                            <div class="fir">
+                                <img src="https://i.scdn.co/image/ab67616d00001e021d1cc2e40d533d7bcebf5dae" alt="">
+                                <button>
+                                    <i class="fa-solid fa-circle-play play"></i>
+                                </button>
+                            </div>
+                            <div class="sdf">
+                                <h4><a href="">moosatape</a></h4>
+                            </div>
+                            <div class="jkl">
+                                <p>2021</p>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="fir">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02fec91fd3e8892d0b79d7a1a4" alt="">
+                                <button>
+                                    <i class="fa-solid fa-circle-play play"></i>
+                                </button>
+                            </div>
+                            <div class="sdf">
+                                <h4><a href="">pbx1</a></h4>
+                            </div>
+                            <div class="jkl">
+                                <p>2018</p>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="fir">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02fd2e3126a9d286550f9921a2" alt="">
+                                <button>
+                                    <i class="fa-solid fa-circle-play play"></i>
+                                </button>
+                            </div>
+                            <div class="sdf">
+                                <h4><a href="">no name</a></h4>
+                            </div>
+                            <div class="jkl">
+                                <p>2022</p>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="fir">
+                                <img src="https://i.scdn.co/image/ab67616d00001e021e34adaef52887774a6f06d5" alt="">
+                                <button>
+                                    <i class="fa-solid fa-circle-play play"></i>
+                                </button>
+                            </div>
+                            <div class="sdf">
+                                <h4><a href="">look</a></h4>
+                            </div>
+                            <div class="jkl">
+                                <p>2025</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <section class="mm-footer">
+                        <div>
+                            <div class="mfirst">
+                                <h3>company</h3>
+                            </div>
+                            <div class="msecond">
+                                <a href="">about</a>
+                                <a href="">jobs</a>
+                                <a href="">for the record</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mfirst">
+                                <h3>Communities</h3>
+                            </div>
+                            <div class="msecond">
+                                <a href="">For Artists</a>
+                                <a href="">Developers</a>
+                                <a href="">Advertising</a>
+                                <a href="">Investors</a>
+                                <a href="">Vendors</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mfirst">
+                                <h3>Useful links</h3>
+                            </div>
+                            <div class="msecond">
+                                <a href="">Support</a>
+                                <a href="">Free Mobile App</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mfirst">
+                                <h3>Spotify Plans</h3>
+                            </div>
+                            <div class="msecond">
+                                <a href="">Premium Individual</a>
+                                <a href="">Premium Duo</a>
+                                <a href="">Premium Family</a>
+                                <a href="">Premium Student</a>
+                                <a href="">Spotify Free</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mfirst micons">
+                                <button><i class="fa-brands fa-instagram"></i></button>
+                                <button><i class="fa-brands fa-twitter"></i></button>
+                                <button><i class="fa-brands fa-facebook"></i></button>
+                            </div>
+                            <div class="msecond"></div>
+                        </div>
+                    </section>
+                    <div class="hr">
+
+                    </div>
+                    <section class="last">
+                        <p>&copy;2025 Spotify aB</p>
+                    </section>
+                </main>
+            </div>
+            <div class="m-footer">
+                <div class="first-f">
+
+                    <p>Preview of Spotify</p>
+                    <p>Sign up to get unlimited songs and podcats with accasional ads. No credit card needed</p>
+                </div>
+                <div class="sec-f">
+                    <button>Sign up free</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="livescript.js"></script>
+</body>
+
+</html>

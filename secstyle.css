@@ -1,0 +1,487 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --f-black: #000;
+    --s-black: #1f1f1f;
+    --t-color: #b3b3b3;
+    --chg-color: #fff;
+    --d-black: #383838;
+    --song: #163611;
+}
+
+#pad {
+    padding-left: 0%;
+}
+
+.fir-song-h {
+    height: 45vh;
+    background-color: var(--song);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-hh-same {
+    height: 95%;
+}
+
+.s-img {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-img div {
+    height: 95%;
+    width: 95%;
+}
+
+.s-img div img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    ;
+}
+
+.s-name {
+    width: 74%;
+    padding-left: 2%;
+}
+
+.s-name div {
+    width: 100%;
+}
+
+.s-name .first {
+    height: 30%;
+    display: flex;
+    align-items: end;
+}
+
+.s-name .first p {
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--chg-color);
+}
+
+
+.s-name .sec {
+    height: 50%;
+}
+
+.s-name .sec h1 {
+    color: var(--chg-color);
+    text-transform: capitalize;
+    font-size: 6rem;
+}
+
+.s-name .thr {
+    height: 20%;
+    display: flex;
+    align-items: end;
+}
+
+.s-name .thr span img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+
+.s-name .thr span a {
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    color: var(--chg-color);
+}
+
+.s-name .thr span a:hover {
+    text-decoration: underline var(--chg-color);
+}
+
+.s-name .thr span p {
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-left: 2px;
+    color: var(--t-color);
+}
+
+.s-name .thr span {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.3%;
+}
+
+:root {
+    --green: #1DB954;
+    --tre: #404040;
+}
+
+.so-inf .first {
+    height: 15vh;
+}
+
+.so-inf .first div {
+    width: 50%;
+    height: 100%;
+}
+
+.so-inf .first .first {
+    display: flex;
+    align-items: end;
+    gap: 6%;
+}
+
+.so-inf .first .first button i {
+    font-size: 60px;
+    background-color: var(--f-black);
+    color: var(--green);
+    border-radius: 50%;
+}
+
+.so-inf .first .first button {
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+}
+
+.so-inf .first .first button span {
+    position: absolute;
+    bottom: 110%;
+    left: 20%;
+    background-color: var(--tre);
+    color: var(--chg-color);
+    padding: 4px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.so-inf .first .first button:hover span {
+    opacity: 1;
+}
+
+.so-inf .first .first button:hover {
+    cursor: pointer;
+    height: 61px;
+    width: auto;
+}
+
+.so-inf .first .first span i {
+    font-size: 30px;
+    color: var(--t-color);
+}
+
+.so-inf .first .first span:nth-child(2) {
+    position: relative;
+}
+.so-inf .first .first span:nth-child(3) {
+    position: relative;
+}
+
+
+.so-inf .first .first span:nth-child(2) span {
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    bottom: 110%;
+    left: 20%;
+    background-color: var(--tre);
+    color: var(--chg-color);
+    padding: 4px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 3s ease;
+    text-transform: capitalize;
+}
+.so-inf .first .first span:nth-child(3) span {
+    position: absolute;
+    height: 30px;
+    width: 190px;
+    bottom: 110%;
+    left: 20%;
+    background-color: var(--tre);
+    color: var(--chg-color);
+    padding: 4px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 3s ease;
+    text-transform: capitalize;
+}
+.so-inf .first .first span:nth-child(2):hover i {
+    color: var(--chg-color);
+    cursor: pointer;
+}
+.so-inf .first .first span:nth-child(2):hover span {
+  opacity: 1;
+}
+.so-inf .first .first span:nth-child(3) i {
+    font-size: 30px;
+}
+.so-inf .first .first span:nth-child(3):hover span {
+    opacity: 1;
+}
+.so-inf .first .first span:nth-child(3):hover i {
+    color: var(--chg-color);
+    cursor: pointer;
+}
+.so-inf .first .sec {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding-right: 3%;
+}
+.so-inf .first .sec span a {
+    color: var(--t-color);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 10px;
+}
+.so-inf .first .sec span a:hover {
+  cursor: pointer;
+  color: var(--chg-color);
+}
+
+
+
+
+
+.ll-hr {
+    height: 10vh;
+    padding-left: 3%;
+}
+.ll-hr div {
+    width: 98%;
+}
+.ll-hr .first {
+    height: 100%;
+}
+.ll-hr .first div:nth-child(1) {
+   display: flex;
+   align-items: end;
+   gap: 5%;
+   color: var(--t-color);
+   text-transform: capitalize;
+   padding-bottom: 1%;
+}
+.ll-hr .first div:nth-child(2) {
+   display: flex;
+   align-items: end;
+   justify-content: end;
+   color: var(--t-color);
+   padding-right: 5%;
+   padding-bottom: 1%;
+}
+.ll-hr .sec {
+    height: 1px;
+    background-color: var(--t-color)
+}
+
+
+.orp {
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.orp div {
+   height: 85%;
+   width: 95%;
+   transition: background-color 0.3s ease;
+   display: flex;
+   border-radius: 5px;
+}
+.orp div:hover {
+   background-color: var(--d-black);
+}
+
+
+.orp div div  {
+    height: 100%;
+    width: 50%;
+    padding: 0.5%;
+}
+.orp div .fit {
+    display: flex;
+    align-items: center;
+}
+.orp div .fit span {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    color: var(--t-color);
+    font-size: 1.2rem;
+    position: relative;
+}
+.orp div .fit span p {
+    position: relative;
+    transition: opacity 0.1s ease;
+}
+.orp div .fit span i {
+    color: var(--chg-color);
+    font-size: 1rem;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease ;
+}
+.orp div:hover .fit span i {
+    opacity: 1;
+}
+.orp div:hover .fit span p {
+   opacity: 0;
+}
+.orp div .fit div {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20%;
+}
+.orp div .fit div a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.orp div .fit div a:hover {
+    text-decoration: underline var(--chg-color);
+}
+.orp div .fit div a:nth-child(1) {
+    color: var(--chg-color);
+    font-size: 1.2rem;
+}
+.orp div .fit div a:nth-child(3) {
+    color: var(--t-color);
+}
+.orp div .fit div p:nth-child(2) {
+    background-color: var(--t-color);
+    font-size: 0.8rem;
+    padding: 5%;
+    border-radius: 3px;
+}
+
+
+.orp div .sec {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.orp div .sec div {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.orp div .sec div span {
+    color: var(--t-color);
+}
+.orp div .sec div span:nth-child(3) {
+    color: var(--chg-color);
+}
+.huhu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.orp div:hover .sec div .huhu {
+    opacity: 1;
+}
+
+
+.love {
+    height: 22vh;
+}
+.love div  {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2%;
+}
+.love div div {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.love div div p {
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--t-color);
+}
+.love div div p:nth-child(1) {
+    font-size: 1.1rem;
+}
+
+
+.more {
+    height: 50vh;
+    padding-left: 1%;
+    padding-right: 0.5%;
+    gap: 0.1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.more .fr {
+    height: 100%;
+    width: 24%;
+    border-radius: 5px;
+    padding: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    transition: background-color 0.3s ease;
+}
+.more .fr:hover .fir button {
+    opacity: 1;
+}
+.more .fr:hover {
+   background-color: var(--d-black);
+}
+.more .fr div {
+    width: 100%;
+}
+.more .fr .fir {
+    height: 85%;
+    position: relative;
+    
+}
+.more .fr .fir img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.more .fr .fir button {
+    border-radius: 50%;
+    border: none;
+    background-color: var(--f-black);
+    color: #1DB954;
+    position: absolute;
+    top: 73%;
+    right: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.more .fr .fir button i {
+    font-size: 50px;
+}
+.sdf h4 a {
+    text-decoration: none;
+    color: var(--chg-color);
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+.sdf h4 a:hover {
+    text-decoration: underline var(--chg-color);
+}
+.jkl p {
+    color: var(--t-color);
+    text-transform: capitalize;
+}
