@@ -5,14 +5,15 @@ A basic Spotify clone using HTML, CSS, JS
 
 ## Demo
 
-[Live Demo](https://your-username.github.io/spotify-clone/)
+[Live Demo](https://builtbyusman.github.io/spotify-clone/)
 
 ---
 ## Screenshots
 
 ### Desktop View
-![Desktop View](./screenshots/home.png)
+![Home page](./screenshots/home.png)
 
+![song page](./screenshots/song.png)
 ## Features
 
 - Basic UI similar to Spotify’s interface
