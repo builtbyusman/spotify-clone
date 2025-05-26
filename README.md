@@ -8,6 +8,10 @@ A basic Spotify clone using HTML, CSS, JS
 [Live Demo](https://your-username.github.io/spotify-clone/)
 
 ---
+## Screenshots
+
+### Desktop View
+![Desktop View](./screenshots/home.png)
 
 ## Features
 
